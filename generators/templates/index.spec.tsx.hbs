@@ -1,0 +1,22 @@
+import React from 'react';
+import { screen, render } from '@testing-library/react';
+
+import { {{ pascalCase name }} } from '.';
+
+const makeSut = () => {
+  const sut = render(<{{ pascalCase name }} />);
+
+  return {
+    sut
+  };
+};
+
+describe('{{ pascalCase name }}', () => {
+  it('should be render a {{ pascalCase name }}', () => {
+    makeSut();
+
+    const element = screen.getByRole('{{ pascalCase name }}');
+
+    expect(element).toBeInTheDocument();
+  });
+});
