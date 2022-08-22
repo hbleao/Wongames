@@ -2,6 +2,15 @@ module.exports = {
   testEnvironment: 'jest-environment-jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
   collectCoverage: true,
-  collectCoverageFrom: ['.src/**/*.ts(x)?', '!src/**/*.stories.tsx'],
-  setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts']
+  collectCoverageFrom: [
+    '<rootDir>/src/components/**/*.ts(x)?',
+    '!src/**/*.stories.tsx',
+    '!src/**/types.ts'
+  ],
+  setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
+  modulePaths: ['<rootDir>/src/', '<rootDir>/.jest'],
+  moduleNameMapper: {
+    '^styled-components':
+      '<rootDir>/node_modules/styled-components/dist/styled-components.browser.cjs.js'
+  }
 };

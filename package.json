@@ -8,8 +8,9 @@
     "start": "next start",
     "lint": "eslint ./src/** --fix",
     "prepare": "husky install",
-    "test": "jest --findRelatedTests --bail",
+    "test": "jest --findRelatedTests --bail --passWithNoTests",
     "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "generate": "yarn plop --plopfile ./generators/plopfile.js",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s ./public"
@@ -19,11 +20,13 @@
     "next-pwa": "^5.5.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "styled-media-query": "^2.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
     "@babel/preset-typescript": "^7.18.6",
+    "@storybook/addon-a11y": "^6.5.10",
     "@storybook/addon-actions": "^6.5.10",
     "@storybook/addon-essentials": "^6.5.10",
     "@storybook/addon-interactions": "^6.5.10",
