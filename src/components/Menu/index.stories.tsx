@@ -1,26 +1,23 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import { Logo } from '.';
-import { LogoProps } from './types';
+import { Menu } from '.';
 
 export default {
-  title: 'Logo',
-  component: Logo
+  title: 'Menu',
+  component: Menu
 } as Meta;
 
-const Template: Story<LogoProps> = args => <Logo {...args} />;
+const Template: Story = args => <Menu {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {
-  color: 'white',
-  size: 'normal',
-  hideOnMobile: false
-};
-
 Default.parameters = {
   layout: 'fullscreen',
   backgrounds: {
     default: 'dark'
   }
+};
+
+Default.args = {
+  username: ''
 };
