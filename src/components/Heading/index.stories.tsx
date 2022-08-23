@@ -15,5 +15,7 @@ Default.args = {
   children: 'Most populars',
   color: 'black',
   lineLeft: false,
-  lineBottom: false
+  lineBottom: false,
+  size: 'small',
+  lineColor: 'primary'
 };
