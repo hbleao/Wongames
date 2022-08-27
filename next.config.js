@@ -4,12 +4,6 @@ const withPWA = require('next-pwa');
 
 const isDev = process.env.NODE_ENV === 'development';
 
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  experimental: {
-    forceSwcTransforms: true
-  }
-};
+const nextConfig = {};
 
 module.exports = nextConfig;
