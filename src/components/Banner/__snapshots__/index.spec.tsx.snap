@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner should be render a Banner correctly 1`] = `
+.c0 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #FAFAFA;
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (min-width:768px) {
+  .c0 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width:768px) {
+
+}
+
+<h2
+  class="c0"
+>
+  Defy death
+</h2>
+`;
