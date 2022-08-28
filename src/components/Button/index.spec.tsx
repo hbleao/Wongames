@@ -8,9 +8,16 @@ import { renderWithTheme } from 'utils/tests/renderWithTheme';
 
 export type MakeSutProps = ButtonProps;
 
-const makeSut = ({ children, size, fullWidth, icon }: MakeSutProps) => {
+const makeSut = ({
+  children,
+  size,
+  fullWidth,
+  icon,
+  as,
+  ...props
+}: MakeSutProps) => {
   const sut = renderWithTheme(
-    <Button size={size} fullWidth={fullWidth} icon={icon}>
+    <Button as={as} size={size} fullWidth={fullWidth} icon={icon} {...props}>
       {children}
     </Button>
   );
@@ -32,7 +39,7 @@ describe('Button', () => {
       'font-size': '1.4rem'
     });
 
-    expect(button.firstChild).toMatchSnapshot();
+    expect(button).toMatchSnapshot();
   });
 
   it('should render the small size', () => {
@@ -74,5 +81,13 @@ describe('Button', () => {
     const buttonIcon = document.querySelector('svg');
 
     expect(buttonIcon).toBeInTheDocument();
+  });
+
+  it('should render Button as a link', () => {
+    makeSut({ children: 'buy now', as: 'a', href: '/link' });
+
+    const link = screen.getByRole('link', { name: /buy now/i });
+
+    expect(link).toHaveAttribute('href', '/link');
   });
 });

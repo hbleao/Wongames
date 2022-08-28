@@ -1,6 +1,6 @@
 import styled, { css, DefaultTheme } from 'styled-components';
 
-import { ButtonProps } from './types';
+import { WrapperProps } from './types';
 
 const modifiers = {
   small: (theme: DefaultTheme) => css`
@@ -21,10 +21,6 @@ const modifiers = {
     width: 100%;
   `,
   withIcon: (theme: DefaultTheme) => css`
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
     > svg {
       width: 1.5rem;
       & + span {
@@ -34,20 +30,22 @@ const modifiers = {
   `
 };
 
-export const Wrapper = styled.button<
-  Pick<ButtonProps, 'size' | 'fullWidth'> & { hasIcon: boolean }
->`
+export const Wrapper = styled.button<WrapperProps>`
   ${({ theme, size, fullWidth, hasIcon }) => css`
     color: ${theme.colors.white};
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     border: none;
     border-radius: ${theme.border.radius};
     padding: ${theme.spacings.xxsmall};
-    background-image: linear-gradient(
-      180deg,
-      ${theme.colors.orange} 0%,
-      ${theme.colors.primary} 50%
-    );
+    background-image: linear-gradient(180deg, #ff5f5f 0%, #f062c0 50%);
+    text-decoration: none;
+
+    &:hover {
+      background: linear-gradient(180deg, #e35565 0%, #d958a6 50%);
+    }
 
     ${!!size && modifiers[size](theme)};
     ${fullWidth && modifiers.fullWidth};

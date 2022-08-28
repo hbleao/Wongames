@@ -1,9 +1,23 @@
-import { ReactNode } from 'react';
+import React, {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  ReactNode
+} from 'react';
+
+type Size = 'small' | 'medium' | 'large';
+type ButtonTypes =
+  | AnchorHTMLAttributes<HTMLAnchorElement>
+  | ButtonHTMLAttributes<HTMLButtonElement>;
 
 export type ButtonProps = {
-  children?: ReactNode;
-  size?: 'small' | 'medium' | 'large';
+  size?: Size;
   fullWidth?: boolean;
   icon?: ReactNode;
-  onClick?: () => (event: MouseEvent) => void;
+  as?: React.ElementType;
+} & ButtonTypes;
+
+export type WrapperProps = {
+  fullWidth?: boolean;
+  size?: Size;
+  hasIcon: boolean;
 };
