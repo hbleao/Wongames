@@ -42,7 +42,7 @@ describe('Row', () => {
     expect(element.parentElement).toBeInTheDocument();
     expect(element.parentElement).toHaveStyle({
       'grid-column-start': '1',
-      'grid-column-end': '12'
+      'grid-column-end': '6'
     });
   });
 
@@ -52,10 +52,10 @@ describe('Row', () => {
     const element = screen.getByText('content');
 
     expect(element.parentElement).toHaveStyleRule('grid-column-start', '1', {
-      media: '(max-width: 1170px)'
+      media: '(min-width: 1170px)'
     });
-    expect(element.parentElement).toHaveStyleRule('grid-column-end', '6', {
-      media: '(max-width: 1170px)'
+    expect(element.parentElement).toHaveStyleRule('grid-column-end', '12', {
+      media: '(min-width: 1170px)'
     });
   });
 
@@ -65,40 +65,40 @@ describe('Row', () => {
     const element = screen.getByText('content');
 
     expect(element.parentElement).toHaveStyleRule('grid-column-start', '1', {
-      media: '(max-width: 450px)'
+      media: '(min-width: 450px)'
     });
     expect(element.parentElement).toHaveStyleRule('grid-column-end', '6', {
-      media: '(max-width: 450px)'
+      media: '(min-width: 450px)'
     });
   });
 
   it('should be render a Row with custom props on all versions', () => {
     makeSut({
+      startSmall: '2',
+      endSmall: '4',
       startDefault: '2',
       endDefault: '10',
       startMedium: '3',
-      endMedium: '5',
-      startSmall: '2',
-      endSmall: '4'
+      endMedium: '5'
     });
 
     const element = screen.getByText('content');
 
     expect(element.parentElement).toHaveStyle({ 'grid-column-start': '2' });
-    expect(element.parentElement).toHaveStyle({ 'grid-column-end': '10' });
-
-    expect(element.parentElement).toHaveStyleRule('grid-column-start', '3', {
-      media: '(max-width: 1170px)'
-    });
-    expect(element.parentElement).toHaveStyleRule('grid-column-end', '5', {
-      media: '(max-width: 1170px)'
-    });
+    expect(element.parentElement).toHaveStyle({ 'grid-column-end': '4' });
 
     expect(element.parentElement).toHaveStyleRule('grid-column-start', '2', {
-      media: '(max-width: 450px)'
+      media: '(min-width: 1170px)'
     });
-    expect(element.parentElement).toHaveStyleRule('grid-column-end', '4', {
-      media: '(max-width: 450px)'
+    expect(element.parentElement).toHaveStyleRule('grid-column-end', '10', {
+      media: '(min-width: 1170px)'
+    });
+
+    expect(element.parentElement).toHaveStyleRule('grid-column-start', '3', {
+      media: '(min-width: 450px)'
+    });
+    expect(element.parentElement).toHaveStyleRule('grid-column-end', '5', {
+      media: '(min-width: 450px)'
     });
   });
 });

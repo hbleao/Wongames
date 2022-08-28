@@ -12,17 +12,17 @@ export const Row = styled.div<WrapperProps>`
     startSmall,
     endSmall
   }) => css`
-    grid-column-start: ${startDefault ? startDefault : '1'};
-    grid-column-end: ${endDefault ? endDefault : '12'};
+    grid-column-start: ${startSmall ? startSmall : '1'};
+    grid-column-end: ${endSmall ? endSmall : '6'};
 
-    ${media.lessThan('large')`
+    ${media.greaterThan('small')`
       grid-column-start: ${startMedium ? startMedium : '1'};
       grid-column-end: ${endMedium ? endMedium : '6'};
     `}
 
-    ${media.lessThan('small')`
-      grid-column-start: ${startSmall ? startSmall : '1'};
-      grid-column-end: ${endSmall ? endSmall : '6'};
+    ${media.greaterThan('large')`
+      grid-column-start: ${startDefault ? startDefault : '1'};
+      grid-column-end: ${endDefault ? endDefault : '12'};
     `}
   `}
 `;

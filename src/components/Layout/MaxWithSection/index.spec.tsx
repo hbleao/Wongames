@@ -58,9 +58,7 @@ describe('MaxWithSection', () => {
     expect(content.parentElement).toBeInTheDocument();
     expect(content.parentElement).toHaveStyle({
       display: 'grid',
-      'grid-column': '2 / span 12',
-      'grid-template-columns': 'repeat(12,minmax(auto,4.2rem))',
-      gap: '2rem 2rem'
+      gap: '1rem 1rem'
     });
   });
 
@@ -69,11 +67,15 @@ describe('MaxWithSection', () => {
 
     const content = screen.getByText(/content/i);
 
-    expect(content.parentElement).toHaveStyleRule('grid-column', '2 / span 6', {
-      media: '(max-width: 1170px)'
-    });
-    expect(content.parentElement).toHaveStyleRule('gap', '1rem 1rem', {
-      media: '(max-width: 1170px)'
+    expect(content.parentElement).toHaveStyleRule(
+      'grid-column',
+      '2 / span 12',
+      {
+        media: '(min-width: 1170px)'
+      }
+    );
+    expect(content.parentElement).toHaveStyleRule('gap', '2rem 2rem', {
+      media: '(min-width: 1170px)'
     });
   });
 
@@ -87,15 +89,15 @@ describe('MaxWithSection', () => {
     const content = screen.getByText(/content/i);
 
     expect(content.parentElement).toHaveStyle({
-      gap: '2.2rem'
+      gap: '1.7rem'
+    });
+
+    expect(content.parentElement).toHaveStyleRule('gap', '2.2rem', {
+      media: '(min-width: 1170px)'
     });
 
     expect(content.parentElement).toHaveStyleRule('gap', '5.5rem', {
-      media: '(max-width: 1170px)'
-    });
-
-    expect(content.parentElement).toHaveStyleRule('gap', '1.7rem', {
-      media: '(max-width: 768px)'
+      media: '(min-width: 450px)'
     });
   });
 
@@ -109,15 +111,15 @@ describe('MaxWithSection', () => {
     const content = screen.getByText(/content/i);
 
     expect(content.parentElement).toHaveStyle({
-      padding: '2.2rem'
+      padding: '1.7rem'
+    });
+
+    expect(content.parentElement).toHaveStyleRule('padding', '2.2rem', {
+      media: '(min-width: 1170px)'
     });
 
     expect(content.parentElement).toHaveStyleRule('padding', '5.5rem', {
-      media: '(max-width: 1170px)'
-    });
-
-    expect(content.parentElement).toHaveStyleRule('padding', '1.7rem', {
-      media: '(max-width: 768px)'
+      media: '(min-width: 450px)'
     });
   });
 
@@ -131,15 +133,15 @@ describe('MaxWithSection', () => {
     const content = screen.getByText(/content/i);
 
     expect(content.parentElement).toHaveStyle({
-      margin: '2.2rem'
+      margin: '1.7rem'
+    });
+
+    expect(content.parentElement).toHaveStyleRule('margin', '2.2rem', {
+      media: '(min-width: 1170px)'
     });
 
     expect(content.parentElement).toHaveStyleRule('margin', '5.5rem', {
-      media: '(max-width: 1170px)'
-    });
-
-    expect(content.parentElement).toHaveStyleRule('margin', '1.7rem', {
-      media: '(max-width: 768px)'
+      media: '(min-width: 450px)'
     });
   });
 });

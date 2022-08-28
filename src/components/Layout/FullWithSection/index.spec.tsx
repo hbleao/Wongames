@@ -58,9 +58,8 @@ describe('FullWithSection', () => {
     expect(content.parentElement).toBeInTheDocument();
     expect(content.parentElement).toHaveStyle({
       display: 'grid',
-      'grid-column': '1 / span 14',
-      'grid-template-columns': '1fr repeat(12,minmax(auto,4.2rem)) 1fr',
-      gap: '2rem 2rem'
+      'grid-template-columns': '1rem repeat(6,1fr) 1rem',
+      gap: '1rem 1rem'
     });
   });
 
@@ -70,30 +69,30 @@ describe('FullWithSection', () => {
     const content = screen.getByText(/content/i);
 
     expect(content.parentElement).toHaveStyleRule('grid-column', '1 / span 8', {
-      media: '(max-width: 1170px)'
+      media: '(min-width: 450px)'
     });
     expect(content.parentElement).toHaveStyleRule(
       'grid-template-columns',
       '2rem repeat(6,1fr) 2rem',
       {
-        media: '(max-width: 1170px)'
+        media: '(min-width: 450px)'
       }
     );
     expect(content.parentElement).toHaveStyleRule('gap', '1rem 1rem', {
-      media: '(max-width: 1170px)'
+      media: '(min-width: 450px)'
     });
   });
 
-  it('should be render a FullWithSection on mobile version', () => {
+  it('should be render a FullWithSection on desktop version', () => {
     makeSut({});
 
     const content = screen.getByText(/content/i);
 
     expect(content.parentElement).toHaveStyleRule(
       'grid-template-columns',
-      '1rem repeat(6,1fr) 1rem',
+      '1fr repeat(12,minmax(auto,4.2rem)) 1fr',
       {
-        media: '(max-width: 768px)'
+        media: '(min-width: 1170px)'
       }
     );
   });
@@ -108,15 +107,15 @@ describe('FullWithSection', () => {
     const content = screen.getByText(/content/i);
 
     expect(content.parentElement).toHaveStyle({
-      gap: '2.2rem'
+      gap: '1.7rem'
+    });
+
+    expect(content.parentElement).toHaveStyleRule('gap', '2.2rem', {
+      media: '(min-width: 1170px)'
     });
 
     expect(content.parentElement).toHaveStyleRule('gap', '5.5rem', {
-      media: '(max-width: 1170px)'
-    });
-
-    expect(content.parentElement).toHaveStyleRule('gap', '1.7rem', {
-      media: '(max-width: 768px)'
+      media: '(min-width: 450px)'
     });
   });
 
@@ -130,15 +129,15 @@ describe('FullWithSection', () => {
     const content = screen.getByText(/content/i);
 
     expect(content.parentElement).toHaveStyle({
-      padding: '2.2rem'
+      padding: '1.7rem'
+    });
+
+    expect(content.parentElement).toHaveStyleRule('padding', '2.2rem', {
+      media: '(min-width: 1170px)'
     });
 
     expect(content.parentElement).toHaveStyleRule('padding', '5.5rem', {
-      media: '(max-width: 1170px)'
-    });
-
-    expect(content.parentElement).toHaveStyleRule('padding', '1.7rem', {
-      media: '(max-width: 768px)'
+      media: '(min-width: 450px)'
     });
   });
 
@@ -152,15 +151,15 @@ describe('FullWithSection', () => {
     const content = screen.getByText(/content/i);
 
     expect(content.parentElement).toHaveStyle({
-      margin: '2.2rem'
+      margin: '1.7rem'
+    });
+
+    expect(content.parentElement).toHaveStyleRule('margin', '2.2rem', {
+      media: '(min-width: 1170px)'
     });
 
     expect(content.parentElement).toHaveStyleRule('margin', '5.5rem', {
-      media: '(max-width: 1170px)'
-    });
-
-    expect(content.parentElement).toHaveStyleRule('margin', '1.7rem', {
-      media: '(max-width: 768px)'
+      media: '(min-width: 450px)'
     });
   });
 });
