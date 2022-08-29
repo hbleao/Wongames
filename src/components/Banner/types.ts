@@ -1,3 +1,5 @@
+import { RibbonColors, RibbonSizes } from '../Ribbon/types';
+
 export type ImageProps = {
   src: string;
 };
@@ -8,4 +10,7 @@ export type BannerProps = {
   subtitle: string;
   buttonLabel: string;
   buttonLink: string;
+  ribbon?: string;
+  ribbonSize?: RibbonSizes;
+  ribbonColor?: RibbonColors;
 };

@@ -2,16 +2,26 @@ import * as S from './styles';
 import { BannerProps } from './types';
 
 import { Button } from 'components/Button';
+import { Ribbon } from 'components/Ribbon';
 
 export const Banner = ({
   image,
   title,
   subtitle,
   buttonLabel,
-  buttonLink
+  buttonLink,
+  ribbon,
+  ribbonColor = 'primary',
+  ribbonSize = 'normal'
 }: BannerProps) => {
   return (
     <S.Wrapper>
+      {!!ribbon && (
+        <Ribbon size={ribbonSize} color={ribbonColor}>
+          {ribbon}
+        </Ribbon>
+      )}
+
       <S.Image src={image} role="img" aria-label={title} />
 
       <S.Caption>
