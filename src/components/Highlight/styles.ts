@@ -6,9 +6,23 @@ import { WrapperProps } from './types';
 const modifiers = {
   left: () => css`
     grid-template-areas: 'content floatImage';
+    grid-template-columns: 2fr 1fr;
+
+    ${Content} {
+      text-align: left;
+    }
+
+    ${FloatImage} {
+      justify-self: end;
+    }
   `,
   right: () => css`
     grid-template-areas: 'floatImage content';
+    grid-template-columns: 1fr 2fr;
+
+    ${Content} {
+      text-align: right;
+    }
   `
 };
 
@@ -20,7 +34,6 @@ export const Wrapper = styled.div<WrapperProps>`
     background-position: center center;
     background-size: cover;
     display: grid;
-    grid-template-columns: 1fr 2fr;
 
     &::after {
       content: '';
@@ -55,7 +68,7 @@ export const FloatImage = styled.img`
 export const Content = styled.div`
   ${({ theme }) => css`
     z-index: ${theme.layers.base};
-    text-align: right;
+
     padding: ${theme.spacings.xsmall};
     grid-area: content;
 

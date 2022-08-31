@@ -2,6 +2,7 @@ import React from 'react';
 import { screen } from '@testing-library/react';
 
 import { Highlight } from '.';
+import * as S from './styles';
 
 import { renderWithTheme } from 'utils/tests/renderWithTheme';
 
@@ -87,11 +88,28 @@ describe('Highlight', () => {
   it('should render align right by default', () => {
     const image = '/float-image.png';
     const title = 'title with float image';
+    const { sut } = makeSut({ floatImage: image, title, alignment: 'right' });
+
+    expect(sut.container.firstChild).toHaveStyleRule(
+      'grid-template-areas',
+      "'floatImage content'"
+    );
+    expect(sut.container.firstChild).toHaveStyleRule('text-align', 'right', {
+      modifier: `${S.Content}`
+    });
+  });
+
+  it('should render align left by default', () => {
+    const image = '/float-image.png';
+    const title = 'title with float image';
     const { sut } = makeSut({ floatImage: image, title, alignment: 'left' });
 
     expect(sut.container.firstChild).toHaveStyleRule(
       'grid-template-areas',
       "'content floatImage'"
     );
+    expect(sut.container.firstChild).toHaveStyleRule('text-align', 'left', {
+      modifier: `${S.Content}`
+    });
   });
 });
