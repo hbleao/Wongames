@@ -11,16 +11,14 @@ export const Heading = ({
   lineColor = 'primary'
 }: HeadingProps) => {
   return (
-    <>
-      <S.Wrapper
-        color={color}
-        lineLeft={lineLeft}
-        lineBottom={lineBottom}
-        lineColor={lineColor}
-        size={size}
-      >
-        {children}
-      </S.Wrapper>
-    </>
+    <S.Wrapper
+      color={color}
+      lineLeft={lineLeft}
+      lineBottom={lineBottom}
+      lineColor={lineColor}
+      size={size}
+    >
+      {children}
+    </S.Wrapper>
   );
 };
