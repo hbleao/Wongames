@@ -14,7 +14,7 @@ export const Default = Template.bind({});
 Default.parameters = {
   layout: 'fullscreen',
   backgrounds: {
-    default: 'dark'
+    default: 'won-dark'
   }
 };
 
