@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
 `;
 
 export const ImageBox = styled.div`
-  ${({ theme }) => css`
+  ${() => css`
     height: 14rem;
     width: 100%;
     background: #f6f7f8;
