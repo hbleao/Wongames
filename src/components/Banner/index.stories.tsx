@@ -19,11 +19,7 @@ export default {
   }
 } as Meta;
 
-const Template: Story<BannerProps> = args => (
-  <div style={{ maxWidth: '104rem', margin: '0 auto' }}>
-    <Banner {...args} />
-  </div>
-);
+const Template: Story<BannerProps> = args => <Banner {...args} />;
 
 export const Default = Template.bind({});
 
