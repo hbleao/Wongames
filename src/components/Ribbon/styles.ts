@@ -12,7 +12,7 @@ const modifiers = {
       border-top-color: ${darken(0.2, theme.colors[color])};
     }
   `,
-  normal: (theme: DefaultTheme, size: RibbonSizes) => css`
+  normal: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.small};
     height: 3.6rem;
     padding: 0 ${theme.spacings.small};
@@ -24,7 +24,7 @@ const modifiers = {
       border-right-width: 2rem;
     }
   `,
-  small: (theme: DefaultTheme, size: RibbonSizes) => css`
+  small: (theme: DefaultTheme) => css`
     height: 2.6rem;
     font-size: ${theme.font.sizes.xsmall};
     padding: 0 ${theme.spacings.xsmall};
@@ -48,7 +48,7 @@ export const Wrapper = styled.div<RibbonProps>`
     color: ${theme.colors.white};
 
     ${!!color && modifiers.color(theme, color)};
-    ${!!size && modifiers[size](theme, size)};
+    ${!!size && modifiers[size](theme)};
 
     &::before {
       content: '';
