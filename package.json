@@ -1,6 +1,10 @@
 {
-  "name": "boilerplate-nextjs",
+  "name": "won-games",
   "version": "0.1.0",
+  "author": {
+    "name": "Henrique Leão",
+    "email": "hbleao@gmail.com"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -16,10 +20,11 @@
     "build-storybook": "build-storybook -s ./public"
   },
   "dependencies": {
+    "@styled-icons/fa-brands": "^10.47.0",
     "@styled-icons/material-outlined": "^10.34.0",
     "@styled-icons/remix-line": "^10.18.0",
     "next": "12.2.5",
-    "next-pwa": "^5.5.5",
+    "next-pwa": "^5.6.0",
     "polished": "^4.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -30,14 +35,14 @@
   "devDependencies": {
     "@babel/core": "^7.18.10",
     "@babel/preset-typescript": "^7.18.6",
-    "@storybook/addon-a11y": "^6.5.10",
-    "@storybook/addon-actions": "^6.5.10",
-    "@storybook/addon-essentials": "^6.5.10",
-    "@storybook/addon-interactions": "^6.5.10",
-    "@storybook/addon-links": "^6.5.10",
-    "@storybook/builder-webpack5": "^6.5.10",
-    "@storybook/manager-webpack5": "^6.5.10",
-    "@storybook/react": "^6.5.10",
+    "@storybook/addon-a11y": "^6.5.15",
+    "@storybook/addon-actions": "^6.5.15",
+    "@storybook/addon-essentials": "^6.5.15",
+    "@storybook/addon-interactions": "^6.5.15",
+    "@storybook/addon-links": "^6.5.15",
+    "@storybook/builder-webpack5": "^6.5.15",
+    "@storybook/manager-webpack5": "^6.5.15",
+    "@storybook/react": "^6.5.15",
     "@storybook/testing-library": "^0.0.13",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
@@ -58,7 +63,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-storybook": "^0.6.4",
+    "eslint-plugin-storybook": "^0.6.10",
     "git-commit-msg-linter": "^4.1.3",
     "husky": "^8.0.0",
     "jest": "^28.1.3",

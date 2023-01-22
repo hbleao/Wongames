@@ -5,11 +5,14 @@ import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart
 import { Button } from '.';
 
 export default {
-  title: 'Button',
+  title: 'Components/Button',
   component: Button,
   argTypes: {
     icon: {
       type: 'symbol'
+    },
+    minimal: {
+      type: 'boolean'
     }
   }
 } as Meta;
@@ -30,6 +33,17 @@ WithIcon.args = {
   children: 'Buy Now',
   size: 'small',
   fullWidth: false,
+  icon: <AddShoppingCart />
+};
+
+export const Minimal: Story = args => (
+  <Button {...args}>{args.children}</Button>
+);
+Minimal.args = {
+  children: 'Buy Now',
+  size: 'small',
+  fullWidth: false,
+  minimal: true,
   icon: <AddShoppingCart />
 };
 

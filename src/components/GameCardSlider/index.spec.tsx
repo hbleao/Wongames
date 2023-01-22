@@ -1,47 +1,27 @@
 import React from 'react';
 
 import { GameCardSlider } from '.';
+
 import { renderWithTheme } from 'utils/tests/renderWithTheme';
 
-const items = [
-  {
-    title: 'Population 1',
-    developer: 'Rockstar Games',
-    image: 'https://source.unsplash.com/user/willianjusten/300x140',
-    price: 'R$ 235,00',
-    onFav: () => null
-  },
-  {
-    title: 'Population 2',
-    developer: 'Rockstar Games',
-    image: 'https://source.unsplash.com/user/willianjusten/300x140',
-    price: 'R$ 235,00',
-    onFav: () => null
-  },
-  {
-    title: 'Population 3',
-    developer: 'Rockstar Games',
-    image: 'https://source.unsplash.com/user/willianjusten/300x140',
-    price: 'R$ 235,00',
-    onFav: () => null
-  }
-];
+import { GameCards } from 'constants/components/GameCardSliders';
 
 const makeSut = () => {
-  const sut = renderWithTheme(<GameCardSlider items={items} />);
+  const sut = renderWithTheme(<GameCardSlider items={GameCards} />);
 
   return {
     sut
   };
 };
 
-describe('GameCardSlider', () => {
+describe('Components/GameCardSlider', () => {
   it('should be render a GameCardSlider', () => {
-    makeSut();
+    const { sut } = makeSut();
 
     const gameCardSlide = document.querySelector('.slick-slide');
 
     expect(gameCardSlide).toBeInTheDocument();
+    expect(sut.container).toMatchSnapshot();
   });
 
   it('should render with 3 active item', () => {

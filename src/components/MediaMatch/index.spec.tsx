@@ -18,7 +18,7 @@ const makeSut = ({ greaterThan, lessThan, children }: MakeSutProps) => {
   };
 };
 
-describe('MediaMatch', () => {
+describe('Components/MediaMatch', () => {
   let desktopHeading: Element;
   let mobileHeading: Element;
 

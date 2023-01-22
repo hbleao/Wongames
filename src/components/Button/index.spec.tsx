@@ -14,10 +14,18 @@ const makeSut = ({
   fullWidth,
   icon,
   as,
+  minimal,
   ...props
 }: MakeSutProps) => {
   const sut = renderWithTheme(
-    <Button as={as} size={size} fullWidth={fullWidth} icon={icon} {...props}>
+    <Button
+      as={as}
+      size={size}
+      fullWidth={fullWidth}
+      icon={icon}
+      minimal={minimal}
+      {...props}
+    >
       {children}
     </Button>
   );
@@ -27,7 +35,7 @@ const makeSut = ({
   };
 };
 
-describe('Button', () => {
+describe('Components/Button', () => {
   it('should render the medium by size', () => {
     makeSut({ children: 'buy now' });
 
@@ -81,6 +89,17 @@ describe('Button', () => {
     const buttonIcon = document.querySelector('svg');
 
     expect(buttonIcon).toBeInTheDocument();
+  });
+
+  it('should render a minimal version', () => {
+    makeSut({ children: 'buy now', icon: <AddShoppingCart />, minimal: true });
+
+    const button = screen.getByRole('button', { name: /buy now/i });
+
+    expect(button).toHaveStyle({
+      background: 'none',
+      color: '#F231A5'
+    });
   });
 
   it('should render Button as a link', () => {

@@ -5,7 +5,7 @@ import { Banner } from '.';
 import { BannerProps } from './types';
 
 export default {
-  title: 'Banner',
+  title: 'Components/Banner',
   component: Banner,
   args: {
     image: 'https://source.unsplash.com/user/willianjusten/1042x580',

@@ -3,7 +3,7 @@ import media from 'styled-media-query';
 
 import { HeadingProps, LineColors } from './types';
 
-const modifiers = {
+export const modifiers = {
   small: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.medium};
 
@@ -17,6 +17,9 @@ const modifiers = {
     ${media.greaterThan('medium')`
       font-size: ${theme.font.sizes.xxlarge};
     `}
+  `,
+  huge: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.sizes.huge};
   `,
   lineLeft: (theme: DefaultTheme, lineColor: LineColors) => css`
     padding-left: ${theme.spacings.xxsmall};

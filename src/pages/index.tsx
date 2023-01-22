@@ -1,18 +1,24 @@
-import { Highlight } from 'components/Highlight';
-import type { NextPage } from 'next';
+import { Home } from 'templates/Home';
 
-const Home: NextPage = () => {
-  return (
-    <div>
-      <p> page </p>
-      <Highlight
-        title="Read Dead it's back"
-        subtitle="Come see Jhon's new adventures"
-        buttonLabel="Buy Now"
-        buttonLink="/rdr2"
-      />
-    </div>
-  );
-};
+import { Banners, GameCards, highlight } from 'constants/components';
 
-export default Home;
+import { HomeProps } from 'templates/Home/type';
+
+export default function Index(props: HomeProps) {
+  return <Home {...props} />;
+}
+
+export function getServerSideProps() {
+  return {
+    props: {
+      banners: Banners,
+      gameCards: GameCards,
+      mostPopularHighlight: highlight,
+      mostPopularGameCards: GameCards,
+      upcomingGames: highlight,
+      upcomingGameCards: GameCards,
+      freeGames: highlight,
+      freeGameCards: GameCards
+    }
+  };
+}

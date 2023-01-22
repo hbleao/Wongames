@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/react';
 import { Ribbon } from '.';
 
 export default {
-  title: 'Ribbon',
+  title: 'Components/Ribbon',
   component: Ribbon
 } as Meta;
 

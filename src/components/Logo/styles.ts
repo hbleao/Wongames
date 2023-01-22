@@ -33,7 +33,9 @@ export const Wrapper = styled.div<
   Pick<LogoProps, 'color' | 'size' | 'hideOnMobile'>
 >`
   ${({ theme, color, size, hideOnMobile }) => css`
-    color: ${theme.colors[color!]};
+    svg {
+      color: ${theme.colors[color!]};
+    }
 
     ${!!size && modifiers[size]};
     ${!!hideOnMobile && modifiers.hideOnMobile}

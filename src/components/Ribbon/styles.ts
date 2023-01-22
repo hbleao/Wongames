@@ -1,7 +1,7 @@
 import styled, { css, DefaultTheme } from 'styled-components';
 import { darken } from 'polished';
 
-import { RibbonColors, RibbonProps, RibbonSizes } from './types';
+import { RibbonColors, RibbonProps } from './types';
 
 const modifiers = {
   color: (theme: DefaultTheme, color: RibbonColors) => css`

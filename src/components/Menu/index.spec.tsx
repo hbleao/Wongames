@@ -16,9 +16,9 @@ const makeSut = ({ username }: MakeSutProps) => {
   };
 };
 
-describe('Menu', () => {
+describe('Components/Menu', () => {
   it('should be render a Menu', () => {
-    makeSut({});
+    const { sut } = makeSut({});
 
     const menuIcon = screen.getByLabelText(/open menu/i);
     const searchIcon = screen.getByLabelText(/search/i);
@@ -29,6 +29,7 @@ describe('Menu', () => {
     expect(searchIcon).toBeInTheDocument();
     expect(shoppingCartIcon).toBeInTheDocument();
     expect(logo).toBeInTheDocument();
+    expect(sut.container).toMatchSnapshot();
   });
 
   it('should handle the open/close mobile menu ', () => {
@@ -61,8 +62,8 @@ describe('Menu', () => {
   it('should show register box when logged out', () => {
     makeSut({});
 
-    const login = screen.getByText(/login now/i);
-    const createAccount = screen.getByText(/login now/i);
+    const login = screen.getByText(/Sign up/i);
+    const createAccount = screen.getByText(/Sign up/i);
     const myAccount = screen.queryByText(/my account/i);
     const wishList = screen.queryByText(/wishlist/i);
 
@@ -75,8 +76,8 @@ describe('Menu', () => {
   it('should show wishlist and my account when logged in', () => {
     makeSut({ username: 'Henrique' });
 
-    const login = screen.queryByText(/login now/i);
-    const createAccount = screen.queryByText(/login now/i);
+    const login = screen.queryByText(/Sign up/i);
+    const createAccount = screen.queryByText(/Sign up/i);
     const myAccount = screen.getByText(/my account/i);
     const wishList = screen.getByText(/wishlist/i);
 

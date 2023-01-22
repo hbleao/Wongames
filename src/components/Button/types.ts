@@ -14,10 +14,12 @@ export type ButtonProps = {
   fullWidth?: boolean;
   icon?: ReactNode;
   as?: React.ElementType;
+  minimal?: boolean;
 } & ButtonTypes;
 
 export type WrapperProps = {
   fullWidth?: boolean;
   size?: Size;
   hasIcon: boolean;
+  minimal?: boolean;
 };

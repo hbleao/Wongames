@@ -44,7 +44,7 @@ const makeSut = ({
   };
 };
 
-describe('Banner', () => {
+describe('Components/Banner', () => {
   it('should be render a Banner correctly', () => {
     makeSut({});
 

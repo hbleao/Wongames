@@ -13,9 +13,9 @@ const makeSut = () => {
   };
 };
 
-describe('Footer', () => {
+describe('Components/Footer', () => {
   it('should render 4 columns topics', () => {
-    makeSut();
+    const { sut } = makeSut();
 
     const contact = screen.getByText(/contact/i);
     const followUs = screen.getByText(/follow us/i);
@@ -26,6 +26,7 @@ describe('Footer', () => {
     expect(followUs).toBeInTheDocument();
     expect(links).toBeInTheDocument();
     expect(location).toBeInTheDocument();
+    expect(sut.container).toMatchSnapshot();
   });
 
   it('should render 4 columns inline on desktop version', () => {

@@ -52,7 +52,7 @@ const makeSut = ({
 
 describe('GameCard', () => {
   it('should be render a GameCard', () => {
-    makeSut({});
+    const { sut } = makeSut({});
 
     const title = screen.getByRole('heading', { name: /population/i });
     const developer = screen.getByRole('heading', { name: /rockstar games/i });
@@ -67,6 +67,7 @@ describe('GameCard', () => {
     expect(price).toBeInTheDocument();
     expect(wishListButton).toBeInTheDocument();
     expect(shoppingCartButton).toBeInTheDocument();
+    expect(sut.container).toMatchSnapshot();
   });
 
   it('should render price in label', () => {

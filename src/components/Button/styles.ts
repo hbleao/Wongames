@@ -1,4 +1,5 @@
 import styled, { css, DefaultTheme } from 'styled-components';
+import { darken } from 'polished';
 
 import { WrapperProps } from './types';
 
@@ -27,11 +28,20 @@ const modifiers = {
         margin-left: ${theme.spacings.xxsmall};
       }
     }
+  `,
+  minimal: (theme: DefaultTheme) => css`
+    background: none;
+    color: ${theme.colors.primary};
+
+    &:hover {
+      background: none;
+      color: ${darken(0.1, theme.colors.primary)};
+    }
   `
 };
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, size, fullWidth, hasIcon }) => css`
+  ${({ theme, size, fullWidth, hasIcon, minimal }) => css`
     color: ${theme.colors.white};
     display: inline-flex;
     align-items: center;
@@ -49,6 +59,7 @@ export const Wrapper = styled.button<WrapperProps>`
 
     ${!!size && modifiers[size](theme)};
     ${fullWidth && modifiers.fullWidth};
-    ${!!hasIcon && modifiers.withIcon(theme)}
+    ${!!hasIcon && modifiers.withIcon(theme)};
+    ${minimal && modifiers.minimal(theme)};
   `}
 `;

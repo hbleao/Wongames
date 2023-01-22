@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/Heading should be render a white label 1`] = `
+.c0 {
+  color: #FAFAFA;
+  font-size: 2.0rem;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    font-size: 2.8rem;
+  }
+}
+
+<div>
+  <h2
+    class="c0"
+    color="white"
+  >
+    Most populars
+  </h2>
+</div>
+`;

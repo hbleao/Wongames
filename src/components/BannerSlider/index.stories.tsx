@@ -2,39 +2,15 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { BannerSlider } from '.';
+
+import { Banners } from 'constants/components/BannerSlider';
+
 import { BannerSliderProps } from './types';
 
-const items = [
-  {
-    image: 'https://source.unsplash.com/user/willianjusten/1042x580',
-    title: 'Defy death 1',
-    subtitle: '<p>Play the new <strong>Crashland</strong> season</p>',
-    buttonLabel: 'Buy now',
-    buttonLink: '/games/defy-death'
-  },
-  {
-    image: 'https://source.unsplash.com/user/willianjusten/1042x580',
-    title: 'Defy death 2',
-    subtitle: '<p>Play the new <strong>Crashland</strong> season</p>',
-    buttonLabel: 'Buy now',
-    buttonLink: '/games/defy-death',
-    ribbon: '20% OFF',
-    ribbonSize: 'normal',
-    ribbonColor: 'primary'
-  },
-  {
-    image: 'https://source.unsplash.com/user/willianjusten/1042x580',
-    title: 'Defy death 3',
-    subtitle: '<p>Play the new <strong>Crashland</strong> season</p>',
-    buttonLabel: 'Buy now',
-    buttonLink: '/games/defy-death'
-  }
-];
-
 export default {
-  title: 'BannerSlider',
+  title: 'Components/BannerSlider',
   component: BannerSlider,
-  args: { items },
+  args: { items: Banners },
   parameters: {
     backgrounds: {
       default: 'won-dark'

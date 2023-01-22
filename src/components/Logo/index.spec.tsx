@@ -1,15 +1,16 @@
 import React from 'react';
-import { screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 
 import { Logo } from '.';
 import { renderWithTheme } from 'utils/tests/renderWithTheme';
+
 import { LogoProps } from './types';
 
 export type MakeSutProps = LogoProps;
 
-const makeSut = ({ color, size, hideOnMobile }: MakeSutProps) => {
+const makeSut = ({ id, color, size, hideOnMobile }: MakeSutProps) => {
   const sut = renderWithTheme(
-    <Logo color={color} size={size} hideOnMobile={hideOnMobile} />
+    <Logo id={id} color={color} size={size} hideOnMobile={hideOnMobile} />
   );
 
   return {
@@ -17,15 +18,25 @@ const makeSut = ({ color, size, hideOnMobile }: MakeSutProps) => {
   };
 };
 
-describe('Logo', () => {
+describe('Components/Logo', () => {
   it('should render a white label by default', () => {
-    makeSut({});
+    const { sut } = makeSut({});
 
     const logo = screen.getByLabelText(/Won Games/i);
 
-    expect(logo.parentElement).toHaveStyle({
+    expect(logo).toHaveStyle({
       color: '#fafafa'
     });
+    expect(sut.container).toMatchSnapshot();
+  });
+
+  it('should render the logo with id passed', () => {
+    const id = 'my_id';
+    makeSut({ id });
+
+    const logoId = document.querySelector(`#paint_${id}`);
+
+    expect(logoId).toBeInTheDocument();
   });
 
   it('should render a black label when color is passed', () => {
@@ -33,19 +44,21 @@ describe('Logo', () => {
 
     const logo = screen.getByLabelText(/Won Games/i);
 
-    expect(logo.parentElement).toHaveStyle({
+    expect(logo).toHaveStyle({
       color: '#030517'
     });
   });
 
-  it('should render a bugger logo', () => {
+  it('should render a bigger logo', async () => {
     makeSut({ size: 'large' });
 
     const logo = screen.getByLabelText(/Won Games/i);
 
-    expect(logo.parentElement).toHaveStyle({
-      width: '20rem',
-      height: '5.9rem'
+    await waitFor(() => {
+      expect(logo.parentElement).toHaveStyle({
+        width: '20rem',
+        height: '5.9rem'
+      });
     });
   });
 

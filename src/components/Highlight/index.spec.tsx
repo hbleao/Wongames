@@ -42,9 +42,9 @@ const makeSut = ({
   };
 };
 
-describe('Highlight', () => {
+describe('Components/Highlight', () => {
   it('should render headings and button', () => {
-    makeSut({});
+    const { sut } = makeSut({});
 
     const heading1 = screen.getByRole('heading', { name: 'Heading 1' });
     const heading2 = screen.getByRole('heading', { name: 'Heading 2' });
@@ -53,6 +53,7 @@ describe('Highlight', () => {
     expect(heading1).toBeInTheDocument();
     expect(heading2).toBeInTheDocument();
     expect(buttonLink).toBeInTheDocument();
+    expect(sut.container).toMatchSnapshot();
   });
 
   it('should render background image', () => {

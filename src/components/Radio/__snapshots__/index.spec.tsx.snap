@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/Radio Should be render with label 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  border: 0.2rem solid #2E2F42;
+  background-color: transparent;
+  -webkit-transition: background 0.1s ease-in-out;
+  transition: background 0.1s ease-in-out;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1::before {
+  content: '';
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.c1:focus {
+  box-shadow: 0 0 0.5rem #F231A5;
+}
+
+.c1:checked {
+  border-color: #F231A5;
+}
+
+.c1:checked:before {
+  opacity: 1;
+  background-color: #F231A5;
+}
+
+.c2 {
+  cursor: pointer;
+  line-height: 1;
+  font-size: 1.6rem;
+  padding-left: 0.8rem;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <input
+      class="c1"
+      id="check"
+      type="radio"
+      value=""
+    />
+    <label
+      class="c2"
+      for="check"
+    >
+      Radio
+    </label>
+  </div>
+</div>
+`;

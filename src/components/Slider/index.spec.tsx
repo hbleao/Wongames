@@ -17,7 +17,7 @@ const makeSut = () => {
   };
 };
 
-describe('Slider', () => {
+describe('Components/Slider', () => {
   it('should be render children as slider item', () => {
     const { sut } = makeSut();
 

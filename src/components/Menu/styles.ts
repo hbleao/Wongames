@@ -8,6 +8,7 @@ export const Wrapper = styled.menu`
     align-items: center;
     padding: ${theme.spacings.small} 0;
     position: relative;
+    z-index: ${theme.layers.alwaysOnTop};
   `}
 `;
 
@@ -91,7 +92,7 @@ export const MenuFull = styled.nav<MenuFullProps>`
     justify-content: space-between;
     flex-direction: column;
     background-color: ${theme.colors.white};
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;

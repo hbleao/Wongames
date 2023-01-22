@@ -19,13 +19,14 @@ const makeSut = ({ children, color, size }: MakeSutProps) => {
   };
 };
 
-describe('Ribbon', () => {
+describe('Components/Ribbon', () => {
   it('should be render a Ribbon', () => {
-    makeSut({ children: 'Best Seller' });
+    const { sut } = makeSut({ children: 'Best Seller' });
 
     const text = screen.getByText(/best seller/i);
 
     expect(text).toBeInTheDocument();
+    expect(sut.container).toMatchSnapshot();
   });
 
   it('should be render a Ribbon with primary color', () => {

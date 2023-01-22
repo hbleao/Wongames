@@ -32,10 +32,10 @@ const makeSut = ({
   };
 };
 
-describe('Heading', () => {
+describe('Components/Heading', () => {
   it('should be render a white label', () => {
     const text = 'Most populars';
-    makeSut({ children: text });
+    const { sut } = makeSut({ children: text });
 
     const heading = screen.getByRole('heading', { name: text });
 
@@ -43,6 +43,7 @@ describe('Heading', () => {
     expect(heading).toHaveStyle({
       color: '#FAFAFA'
     });
+    expect(sut.container).toMatchSnapshot();
   });
 
   it('should render a black heading when color is passed', () => {
@@ -89,6 +90,17 @@ describe('Heading', () => {
     });
     expect(heading).toHaveStyleRule('width', '3rem', {
       modifier: '::after'
+    });
+  });
+
+  it('should render a heading with huge size', () => {
+    const text = 'Most populars';
+    makeSut({ children: text, lineBottom: true, size: 'huge' });
+
+    const heading = screen.getByRole('heading', { name: text });
+
+    expect(heading).toHaveStyle({
+      'font-size': '5.2rem'
     });
   });
 

@@ -2,18 +2,15 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { Highlight } from '.';
+
+import { highlight } from 'constants/components/Highlight';
+
 import { HighlightProps } from './types';
 
 export default {
-  title: 'Highlight',
+  title: 'Components/Highlight',
   component: Highlight,
-  args: {
-    title: 'Read Dead is back!',
-    subtitle: "Come see Jhon's new adventures",
-    buttonLabel: 'Buy Now',
-    backgroundImage: '/img/red-dead.png',
-    buttonLink: '/rdr2'
-  }
+  args: { highlight }
 } as Meta;
 
 const Template: Story<HighlightProps> = args => (

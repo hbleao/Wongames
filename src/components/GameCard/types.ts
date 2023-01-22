@@ -10,7 +10,7 @@ export type GameCardProps = {
   ribbon?: string;
   ribbonSize?: RibbonSizes;
   ribbonColor?: RibbonColors;
-  onFav: () => void;
+  onFav?: () => void;
 };
 
 export type PriceProps = {

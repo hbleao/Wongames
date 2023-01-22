@@ -2,40 +2,27 @@ import React from 'react';
 import { screen } from '@testing-library/react';
 
 import { BannerSlider } from '.';
+
 import { renderWithTheme } from 'utils/tests/renderWithTheme';
 
-const items = [
-  {
-    image: 'https://source.unsplash.com/user/willianjusten/1042x580',
-    title: 'Defy death 1',
-    subtitle: '<p>Play the new <strong>Crashland</strong> season</p>',
-    buttonLabel: 'Buy now',
-    buttonLink: '/games/defy-death'
-  },
-  {
-    image: 'https://source.unsplash.com/user/willianjusten/1042x580',
-    title: 'Defy death 2',
-    subtitle: '<p>Play the new <strong>Crashland</strong> season</p>',
-    buttonLabel: 'Buy now',
-    buttonLink: '/games/defy-death'
-  }
-];
+import { Banners } from 'constants/components/BannerSlider';
 
 const makeSut = () => {
-  const sut = renderWithTheme(<BannerSlider items={items} />);
+  const sut = renderWithTheme(<BannerSlider items={Banners} />);
 
   return {
     sut
   };
 };
 
-describe('BannerSlider', () => {
+describe('Components/BannerSlider', () => {
   it('should be render a BannerSlider', () => {
-    makeSut();
+    const { sut } = makeSut();
 
     const element = document.querySelector('.slick-vertical');
 
     expect(element).toBeInTheDocument();
+    expect(sut.container).toMatchSnapshot();
   });
 
   it('should render with 1 active item', () => {
@@ -52,17 +39,17 @@ describe('BannerSlider', () => {
       hidden: true
     });
 
-    expect(banners).toHaveLength(2);
+    expect(banners).toHaveLength(3);
     expect(activeBanner).toHaveLength(1);
     expect(firstBannerTitle).toBeInTheDocument();
     expect(secondBannerTitle).toBeInTheDocument();
   });
 
-  it('should render 2 dots', () => {
+  it('should render 3 dots', () => {
     makeSut();
 
     const dotItems = document.querySelectorAll('ul.slick-dots > li');
 
-    expect(dotItems).toHaveLength(2);
+    expect(dotItems).toHaveLength(3);
   });
 });

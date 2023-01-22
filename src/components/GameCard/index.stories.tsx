@@ -5,7 +5,7 @@ import { GameCard } from '.';
 import { GameCardProps } from './types';
 
 export default {
-  title: 'GameCard',
+  title: 'Components/GameCard',
   component: GameCard,
   args: {
     title: 'Population',
