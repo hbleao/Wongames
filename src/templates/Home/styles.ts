@@ -5,6 +5,12 @@ import * as HeadingStyles from 'components/Heading/styles';
 import * as HighlighStyles from 'components/Highlight/styles';
 import * as GameCardStyles from 'components/GameCard/styles';
 
+export const Container = styled.main`
+  ${({ theme }) => css`
+    background-color: ${theme.colors.mainBg};
+  `}
+`;
+
 const Sections = styled.section`
   ${({ theme }) => css`
     ${HeadingStyles.Wrapper},
@@ -27,12 +33,6 @@ const Sections = styled.section`
     }
 
     margin-bottom: calc(${theme.grid.gutter} * 2);
-  `}
-`;
-
-export const Container = styled.main`
-  ${({ theme }) => css`
-    background-color: ${theme.colors.mainBg};
   `}
 `;
 

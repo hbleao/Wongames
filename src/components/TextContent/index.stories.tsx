@@ -3,12 +3,12 @@ import { Story, Meta } from '@storybook/react';
 
 import { TextContent } from '.';
 import { TextContentProps } from './types';
-import { mock } from './mock';
+import { mockTextContent } from './mock';
 
 export default {
   title: 'Components/TextContent',
   component: TextContent,
-  args: mock,
+  args: mockTextContent,
   parameters: {
     backgrounds: {
       default: 'won-dark'

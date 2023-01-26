@@ -1,10 +1,10 @@
-import { Platform } from './types';
+import { Platform, Rating } from './types';
 
 export const mockGameDetails = {
-  developer: 'Different Tales',
-  releaseDate: '2020-11-21T23:00:00',
+  developer: 'CD Project Red',
+  releaseDate: '2020-12-21T23:00:00',
   platforms: ['mac', 'linux', 'windows'] as Platform[],
-  publisher: 'Walkabout',
-  rating: 'BR0',
-  genres: ['Role-playing', 'Adventure']
+  publisher: 'CD Project Red',
+  rating: 'BR0' as Rating,
+  genres: ['Role-playing', 'Action']
 };

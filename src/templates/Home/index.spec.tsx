@@ -42,7 +42,7 @@ jest.mock('components/ShowCase', () => {
   };
 });
 
-describe('Home', () => {
+describe('Templates/Home', () => {
   it('should render banner', () => {
     makeSut();
 

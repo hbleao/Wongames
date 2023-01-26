@@ -103,7 +103,7 @@ exports[`Components/GameDetails should be render the blocks 1`] = `
         <p
           class="c5"
         >
-          Different Tales
+          CD Project Red
         </p>
       </div>
       <div
@@ -117,7 +117,7 @@ exports[`Components/GameDetails should be render the blocks 1`] = `
         <p
           class="c5"
         >
-          Nov 21, 2020
+          Dec 21, 2020
         </p>
       </div>
       <div
@@ -213,7 +213,7 @@ exports[`Components/GameDetails should be render the blocks 1`] = `
         <p
           class="c5"
         >
-          2K
+          TWK
         </p>
       </div>
       <div
@@ -241,7 +241,7 @@ exports[`Components/GameDetails should be render the blocks 1`] = `
         <p
           class="c5"
         >
-          Role-playing / Adventure
+          Role-playing / Action
         </p>
       </div>
     </div>

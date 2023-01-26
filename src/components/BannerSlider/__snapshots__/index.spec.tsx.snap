@@ -212,6 +212,10 @@ exports[`Components/BannerSlider should be render a BannerSlider 1`] = `
   display: none;
 }
 
+.c0 {
+  overflow: hidden;
+}
+
 .c0 .slick-dots {
   list-style: none;
   display: -webkit-box !important;

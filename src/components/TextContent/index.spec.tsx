@@ -5,7 +5,7 @@ import { TextContent } from '.';
 
 import { renderWithTheme } from 'utils/tests/renderWithTheme';
 
-import { mock } from './mock';
+import { mockTextContent } from './mock';
 
 type MakeSutProps = {
   title?: string;
@@ -13,7 +13,7 @@ type MakeSutProps = {
 };
 
 const makeSut = ({
-  title = mock.title,
+  title = mockTextContent.title,
   content = '<h1>Content</h1>'
 }: MakeSutProps) => {
   const sut = renderWithTheme(<TextContent title={title} content={content} />);

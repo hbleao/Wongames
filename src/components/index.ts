@@ -17,5 +17,8 @@ export { TextField } from './TextField';
 export { Checkbox } from './Checkbox';
 export { GameDetails } from './GameDetails';
 export { Form, FormLink } from './Form';
+export { Gallery } from './Gallery';
+export { GameInfo } from './GameInfo';
+export { TextContent } from './TextContent';
 
 export { ShowCase } from './ShowCase';

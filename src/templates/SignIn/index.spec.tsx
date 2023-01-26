@@ -13,7 +13,7 @@ const makeSut = () => {
   };
 };
 
-describe('Auth', () => {
+describe('Templates/SignIn', () => {
   it('should be able two logos', () => {
     makeSut();
 

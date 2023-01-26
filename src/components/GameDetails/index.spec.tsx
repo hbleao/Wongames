@@ -11,12 +11,14 @@ import { Rating } from './types';
 
 type MakeSutProps = {
   rating?: Rating;
+  publisher?: string;
 };
 
-const makeSut = ({ rating = 'BR0' }: MakeSutProps) => {
+const makeSut = ({ rating = 'BR0', publisher = 'TWK' }: MakeSutProps) => {
   const sut = renderWithTheme(
     <GameDetails
       rating={rating}
+      publisher={publisher}
       developer={mockGameDetails.developer}
       platforms={mockGameDetails.platforms}
       releaseDate={mockGameDetails.releaseDate}
@@ -64,7 +66,7 @@ describe('Components/GameDetails', () => {
   it('should render the formatted date', () => {
     makeSut({});
 
-    const date = screen.getByText(/Nov 21, 2020/i);
+    const date = screen.getByText(/Dec 21, 2020/i);
 
     expect(date).toBeInTheDocument();
   });
@@ -88,7 +90,7 @@ describe('Components/GameDetails', () => {
   it('should render a list of genres', () => {
     makeSut({});
 
-    const genres = screen.getByText(/Role-playing \/ Adventure/i);
+    const genres = screen.getByText(/Role-playing \/ Action/i);
 
     expect(genres).toBeInTheDocument();
   });

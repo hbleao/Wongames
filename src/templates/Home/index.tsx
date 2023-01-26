@@ -27,26 +27,38 @@ export const Home = ({
         </Container>
 
         <S.SectionNews>
-          <ShowCase title="Novos Jogos" titleColor="black" games={gameCards} />
+          <Container>
+            <ShowCase
+              title="Novos Jogos"
+              titleColor="black"
+              games={gameCards}
+            />
+          </Container>
         </S.SectionNews>
 
-        <ShowCase
-          title="Mais Populares"
-          games={mostPopularGameCards}
-          highlight={mostPopularHighlight}
-        />
+        <Container>
+          <ShowCase
+            title="Mais Populares"
+            games={mostPopularGameCards}
+            highlight={mostPopularHighlight}
+          />
+        </Container>
 
-        <ShowCase
-          title="Em Breve"
-          games={upcomingGameCards}
-          highlight={upcomingGames}
-        />
+        <Container>
+          <ShowCase
+            title="Em Breve"
+            games={upcomingGameCards}
+            highlight={upcomingGames}
+          />
+        </Container>
 
-        <ShowCase
-          title="Gratuitos"
-          games={freeGameCards}
-          highlight={freeGames}
-        />
+        <Container>
+          <ShowCase
+            title="Gratuitos"
+            games={freeGameCards}
+            highlight={freeGames}
+          />
+        </Container>
       </Base>
     </S.Container>
   );

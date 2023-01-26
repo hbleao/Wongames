@@ -5,6 +5,8 @@ import { Wrapper as BannerWrapper } from '../Banner/styles';
 
 export const Wrapper = styled.section`
   ${({ theme }) => css`
+    overflow: hidden;
+
     .slick-dots {
       list-style: none;
       display: flex !important;
