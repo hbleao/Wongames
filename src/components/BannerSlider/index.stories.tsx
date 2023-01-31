@@ -3,14 +3,14 @@ import { Story, Meta } from '@storybook/react';
 
 import { BannerSlider } from '.';
 
-import { Banners } from 'constants/components/BannerSlider';
+import { mockBanners } from './mock';
 
 import { BannerSliderProps } from './types';
 
 export default {
   title: 'Components/BannerSlider',
   component: BannerSlider,
-  args: { items: Banners },
+  args: { items: mockBanners },
   parameters: {
     backgrounds: {
       default: 'won-dark'

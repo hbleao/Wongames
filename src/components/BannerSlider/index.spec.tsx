@@ -5,10 +5,10 @@ import { BannerSlider } from '.';
 
 import { renderWithTheme } from 'utils/tests/renderWithTheme';
 
-import { Banners } from 'constants/components/BannerSlider';
+import { mockBanners } from './mock';
 
 const makeSut = () => {
-  const sut = renderWithTheme(<BannerSlider items={Banners} />);
+  const sut = renderWithTheme(<BannerSlider items={mockBanners} />);
 
   return {
     sut

@@ -7,7 +7,8 @@ import {
   Gallery,
   GameDetails,
   ShowCase,
-  TextContent
+  TextContent,
+  Divider
 } from 'components';
 
 import { GameProps } from './types';
@@ -40,6 +41,7 @@ export const TemplateGame = ({
 
         <S.SectionGameDetails>
           <GameDetails {...details} />
+          <Divider />
         </S.SectionGameDetails>
 
         <S.SectionShowCase>

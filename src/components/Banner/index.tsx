@@ -1,8 +1,8 @@
 import * as S from './styles';
-import { BannerProps } from './types';
 
-import { Button } from 'components/Button';
-import { Ribbon } from 'components/Ribbon';
+import { Button, Ribbon } from 'components';
+
+import { BannerProps } from './types';
 
 export const Banner = ({
   image,

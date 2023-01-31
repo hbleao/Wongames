@@ -1,14 +1,14 @@
-import * as S from './styles';
-
-import { GameCard } from 'components/GameCard';
-import { Slider } from 'components/Slider';
-
-import { SliderSettings } from 'components/Slider/types';
-import { GameCardSliderProps } from './types';
 import {
   ArrowBackIos as ArrowRight,
   ArrowForwardIos as ArrowLeft
 } from '@styled-icons/material-outlined';
+
+import * as S from './styles';
+
+import { GameCard, Slider } from 'components';
+
+import { SliderSettings } from 'components/Slider/types';
+import { GameCardSliderProps } from './types';
 
 export const GameCardSlider = ({
   items,

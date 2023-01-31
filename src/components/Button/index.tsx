@@ -9,6 +9,7 @@ export const Button = forwardRef(
       children,
       size = 'medium',
       fullWidth = false,
+      disabled,
       icon,
       ...props
     }: ButtonProps,
@@ -19,6 +20,7 @@ export const Button = forwardRef(
         size={size}
         fullWidth={fullWidth}
         hasIcon={!!icon}
+        disabled={disabled}
         ref={ref}
         {...props}
       >

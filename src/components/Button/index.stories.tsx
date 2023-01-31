@@ -13,6 +13,18 @@ export default {
     },
     minimal: {
       type: 'boolean'
+    },
+    fullWidth: {
+      type: 'boolean'
+    },
+    disabled: {
+      type: 'boolean'
+    },
+    as: {
+      type: 'symbol'
+    },
+    onClick: {
+      action: 'clicked'
     }
   }
 } as Meta;
@@ -53,4 +65,13 @@ AsLink.args = {
   size: 'large',
   as: 'a',
   href: '/link'
+};
+
+export const Disabled: Story = args => (
+  <Button {...args}>{args.children}</Button>
+);
+Disabled.args = {
+  children: 'Buy Now',
+  size: 'large',
+  disabled: true
 };

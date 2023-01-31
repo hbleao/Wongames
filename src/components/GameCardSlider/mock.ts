@@ -1,6 +1,6 @@
 import { GameCardProps } from 'components/GameCard/types';
 
-export const GameCards: GameCardProps[] = [
+export const mockGameCards: GameCardProps[] = [
   {
     title: 'Population 1',
     developer: 'Rockstar Games',

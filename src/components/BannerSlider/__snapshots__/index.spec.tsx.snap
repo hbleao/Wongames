@@ -74,6 +74,59 @@ exports[`Components/BannerSlider should be render a BannerSlider 1`] = `
   margin-bottom: 1.6rem;
 }
 
+.c0 {
+  overflow: hidden;
+}
+
+.c0 .slick-dots {
+  list-style: none;
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 2.4rem;
+}
+
+.c0 .slick-dots li {
+  background-color: #FAFAFA;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 0.8rem;
+  cursor: pointer;
+}
+
+.c0 .slick-dots li.slick-active {
+  background: #F231A5;
+}
+
+.c0 .slick-dots button {
+  opacity: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
 .c8 {
   color: #FAFAFA;
   display: -webkit-inline-box;
@@ -210,59 +263,6 @@ exports[`Components/BannerSlider should be render a BannerSlider 1`] = `
 
 .c1 .slick-arrow.slick-hidden {
   display: none;
-}
-
-.c0 {
-  overflow: hidden;
-}
-
-.c0 .slick-dots {
-  list-style: none;
-  display: -webkit-box !important;
-  display: -webkit-flex !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin-top: 2.4rem;
-}
-
-.c0 .slick-dots li {
-  background-color: #FAFAFA;
-  width: 1.2rem;
-  height: 1.2rem;
-  border-radius: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin: 0 0.8rem;
-  cursor: pointer;
-}
-
-.c0 .slick-dots li.slick-active {
-  background: #F231A5;
-}
-
-.c0 .slick-dots button {
-  opacity: 0;
-  width: 1.2rem;
-  height: 1.2rem;
-  cursor: pointer;
 }
 
 @media (max-width:1170px) {

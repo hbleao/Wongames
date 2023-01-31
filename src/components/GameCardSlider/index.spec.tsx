@@ -4,10 +4,10 @@ import { GameCardSlider } from '.';
 
 import { renderWithTheme } from 'utils/tests/renderWithTheme';
 
-import { GameCards } from 'constants/components/GameCardSliders';
+import { mockGameCards } from './mock';
 
 const makeSut = () => {
-  const sut = renderWithTheme(<GameCardSlider items={GameCards} />);
+  const sut = renderWithTheme(<GameCardSlider items={mockGameCards} />);
 
   return {
     sut

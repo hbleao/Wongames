@@ -15,7 +15,7 @@ describe('{{ pascalCase name }}', () => {
   it('should be render a {{ pascalCase name }}', () => {
     makeSut();
 
-    const element = screen.getByRole('{{ pascalCase name }}');
+    const element = screen.getByText('{{ pascalCase name }}');
 
     expect(element).toBeInTheDocument();
   });

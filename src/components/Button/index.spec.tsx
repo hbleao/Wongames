@@ -102,6 +102,16 @@ describe('Components/Button', () => {
     });
   });
 
+  it('should render a disabled version', () => {
+    makeSut({ children: 'buy now', disabled: true });
+
+    const button = screen.getByRole('button', { name: /buy now/i });
+
+    expect(button).toHaveStyleRule('cursor', 'not-allowed', {
+      modifier: ':disabled'
+    });
+  });
+
   it('should render Button as a link', () => {
     makeSut({ children: 'buy now', as: 'a', href: '/link' });
 

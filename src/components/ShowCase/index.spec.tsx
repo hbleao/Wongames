@@ -4,9 +4,10 @@ import { screen } from '@testing-library/react';
 import { ShowCase } from '.';
 
 import { renderWithTheme } from 'utils/tests/renderWithTheme';
-import { GameCards, highlight } from 'constants/components';
 
 import { ShowCaseProps } from './types';
+import { mockGameCards } from 'components/GameCardSlider/mock';
+import { mockHighlight } from 'components/Highlight/mock';
 
 const makeSut = ({ title, games, highlight }: ShowCaseProps) => {
   const sut = renderWithTheme(
@@ -21,15 +22,15 @@ const makeSut = ({ title, games, highlight }: ShowCaseProps) => {
 describe('Components/ShowCase', () => {
   it('should be render a ShowCase', () => {
     const title = 'Top Five';
-    const games = GameCards;
-    const { sut } = makeSut({ title, games, highlight });
+    const games = mockGameCards;
+    const { sut } = makeSut({ title, games, highlight: mockHighlight });
 
     const titlePage = screen.getByRole('heading', { name: title });
     const highlightTitle = screen.getByRole('heading', {
-      name: highlight.title
+      name: mockHighlight.title
     });
     const gameCardTitle = screen.getByRole('heading', {
-      name: GameCards[0].title
+      name: mockGameCards[0].title
     });
 
     expect(titlePage).toBeInTheDocument();
@@ -50,7 +51,7 @@ describe('Components/ShowCase', () => {
     makeSut({});
 
     const gameCardTitle = screen.queryByRole('heading', {
-      name: GameCards[0].title
+      name: mockGameCards[0].title
     });
 
     expect(gameCardTitle).not.toBeInTheDocument();
@@ -60,7 +61,7 @@ describe('Components/ShowCase', () => {
     makeSut({});
 
     const highlightTitle = screen.queryByRole('heading', {
-      name: highlight.title
+      name: mockGameCards[0].title
     });
 
     expect(highlightTitle).not.toBeInTheDocument();

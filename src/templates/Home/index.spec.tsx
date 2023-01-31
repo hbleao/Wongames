@@ -3,17 +3,20 @@ import { screen } from '@testing-library/react';
 
 import { Home } from '.';
 import { renderWithTheme } from 'utils/tests/renderWithTheme';
-import { Banners, GameCards, highlight } from 'constants/components';
+
+import { mockBanners } from 'components/BannerSlider/mock';
+import { mockGameCards } from 'components/GameCardSlider/mock';
+import { mockHighlight } from 'components/Highlight/mock';
 
 const props = {
-  banners: Banners,
-  gameCards: GameCards,
-  freeGameCards: GameCards,
-  freeGames: highlight,
-  mostPopularGameCards: GameCards,
-  mostPopularHighlight: highlight,
-  upcomingGameCards: GameCards,
-  upcomingGames: highlight
+  banners: mockBanners,
+  gameCards: mockGameCards,
+  freeGameCards: mockGameCards,
+  freeGames: mockHighlight,
+  mostPopularGameCards: mockGameCards,
+  mostPopularHighlight: mockHighlight,
+  upcomingGameCards: mockGameCards,
+  upcomingGames: mockHighlight
 };
 
 const makeSut = () => {

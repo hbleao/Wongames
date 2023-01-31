@@ -1,8 +1,8 @@
-import { Banner } from 'components/Banner';
-import { Slider } from 'components/Slider';
-import { SliderSettings } from 'components/Slider/types';
-
 import * as S from './styles';
+
+import { Banner, Slider } from 'components';
+
+import { SliderSettings } from 'components/Slider/types';
 import { BannerSliderProps } from './types';
 
 export const BannerSlider = ({ items }: BannerSliderProps) => {

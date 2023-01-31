@@ -15,6 +15,7 @@ export type ButtonProps = {
   icon?: ReactNode;
   as?: React.ElementType;
   minimal?: boolean;
+  disabled?: boolean;
 } & ButtonTypes;
 
 export type WrapperProps = {

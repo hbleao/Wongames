@@ -1,6 +1,8 @@
 import { Home } from 'templates/Home';
 
-import { Banners, GameCards, highlight } from 'constants/components';
+import { mockBanners } from 'components/BannerSlider/mock';
+import { mockGameCards } from 'components/GameCardSlider/mock';
+import { mockHighlight } from 'components/Highlight/mock';
 
 import { HomeProps } from 'templates/Home/type';
 
@@ -11,14 +13,14 @@ export default function Index(props: HomeProps) {
 export function getServerSideProps() {
   return {
     props: {
-      banners: Banners,
-      gameCards: GameCards,
-      mostPopularHighlight: highlight,
-      mostPopularGameCards: GameCards,
-      upcomingGames: highlight,
-      upcomingGameCards: GameCards,
-      freeGames: highlight,
-      freeGameCards: GameCards
+      banners: mockBanners,
+      gameCards: mockGameCards,
+      mostPopularHighlight: mockHighlight,
+      mostPopularGameCards: mockGameCards,
+      upcomingGames: mockHighlight,
+      upcomingGameCards: mockGameCards,
+      freeGames: mockHighlight,
+      freeGameCards: mockGameCards
     }
   };
 }

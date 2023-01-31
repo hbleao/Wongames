@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react';
 
 import { GameCardSlider } from '.';
 
-import { GameCards } from 'constants/components/GameCardSliders';
+import { mockGameCards } from './mock';
 
 import { GameCardSliderProps } from './types';
 
@@ -11,7 +11,7 @@ export default {
   title: 'Components/GameCardSlider',
   component: GameCardSlider,
   args: {
-    items: GameCards,
+    items: mockGameCards,
     color: 'black'
   },
   parameters: {

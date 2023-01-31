@@ -1,6 +1,6 @@
 import { BannerProps } from 'components/Banner/types';
 
-export const Banners: BannerProps[] = [
+export const mockBanners: BannerProps[] = [
   {
     image: 'https://source.unsplash.com/user/willianjusten/1042x580',
     title: 'Defy death 1',

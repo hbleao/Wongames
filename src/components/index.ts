@@ -20,5 +20,10 @@ export { Form, FormLink } from './Form';
 export { Gallery } from './Gallery';
 export { GameInfo } from './GameInfo';
 export { TextContent } from './TextContent';
+export { Grid } from './Grid';
+export { Divider } from './Divider';
+export { Empty } from './Empty';
+export { CartList } from './CartList';
+export { PaymentOptions } from './PaymentOptions';
 
 export { ShowCase } from './ShowCase';

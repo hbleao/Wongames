@@ -1,4 +1,4 @@
-export const mockHighLight = {
+export const mockHighlight = {
   title: 'Read Dead is back!',
   subtitle: "Come see Jhon's new adventures",
   buttonLabel: 'Buy Now',

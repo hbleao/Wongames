@@ -15,6 +15,7 @@ export const Content = styled.div`
   ${({ theme }) => css`
     background-color: ${theme.colors.mainBg};
     flex: 1 0 auto;
+    margin-top: ${theme.spacings.large};
   `}
 `;
 

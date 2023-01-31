@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Components/GameCardSlider should be render a GameCardSlider 1`] = `
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
 .c0 .slick-track,
 .c0 .slick-list {
   display: -webkit-box;
@@ -47,12 +53,6 @@ exports[`Components/GameCardSlider should be render a GameCardSlider 1`] = `
 .c0 .slick-prev.slick-disabled,
 .c0 .slick-next.slick-disabled {
   visibility: hidden;
-}
-
-.c2 {
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
 }
 
 .c13 {
